@@ -38,4 +38,9 @@ rescue GameOver
 	puts
 	puts
 	retry
+
+rescue Interrupt
+	File.open("data.txt", "w") do |file|
+		file.puts max_tiles.inspect
+	end
 end
